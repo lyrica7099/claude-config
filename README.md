@@ -16,6 +16,27 @@ curl -o ~/.claude/CLAUDE.md https://raw.githubusercontent.com/lyrica7099/claude-
 curl -o "$env:USERPROFILE\.claude\CLAUDE.md" https://raw.githubusercontent.com/lyrica7099/claude-config/main/CLAUDE.md
 ```
 
+**Windows（シンボリックリンク方式・推奨）**
+
+`git pull` するだけで自動反映されるため、こちらを推奨。
+
+```bash
+# 1. リポジトリをクローン
+git clone https://github.com/lyrica7099/claude-config ~/claude-config
+```
+
+次に**管理者権限のコマンドプロンプト**で：
+
+```cmd
+mklink C:\Users\<ユーザー名>\CLAUDE.md C:\Users\<ユーザー名>\claude-config\CLAUDE.md
+```
+
+以降、最新版を取り込むときは：
+
+```bash
+cd ~/claude-config && git pull
+```
+
 ## CLAUDE.md を更新した時
 
 Mac で編集後、このリポジトリに反映する：
